@@ -9,7 +9,7 @@ const messages = {
     },
 
     success: {
-        passwordChanged: "Usuario creado correctamente",
+        passwordChanged: "Contraseña modificada correctamente",
         authorized: "Autorizado",
     }
 }

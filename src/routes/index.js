@@ -22,12 +22,10 @@ router.post("/change-password", async (req, res) => {
         const headersList = req.headers;
         const token = headersList.token;
 
-        console.log("Valor del token:", token);
-
         // Verificar si se proporciona un token
         if (!token) {
             console.log("Token no encontrado");
-            
+
             return res.status(400).json({ messages: messages.error.notAuthorized });
         }
 
@@ -38,7 +36,6 @@ router.post("/change-password", async (req, res) => {
 
             console.log("Token válido");
             
-            console.log("Valor de data.userId:", data.userId);
             const userFind = await prismaDB.user.findUnique({
                 where: {
                     id: data.userId
